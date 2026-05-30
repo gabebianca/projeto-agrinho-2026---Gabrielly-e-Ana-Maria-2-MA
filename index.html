@@ -4,270 +4,16 @@
     <meta charset="UTF-8" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
     <title>Agro Forte, Futuro Sustentável | Equilíbrio entre Produção e Meio Ambiente</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop') center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero .tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            margin-bottom: 40px;
-            opacity: 0.8;
-        }
-
-        .btn {
-            background: #2ecc71;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            background: #27ae60;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
-        }
-
-        /* CRISIS SECTION */
-        .crisis {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .crisis h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #e94560;
-        }
-
-        .crisis .lead {
-            font-size: 1.3rem;
-            max-width: 900px;
-            margin: 0 auto 50px;
-            opacity: 0.9;
-            line-height: 1.8;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 50px;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-card .number {
-            display: block;
-            font-size: 3rem;
-            font-weight: bold;
-            color: #e94560;
-            margin-bottom: 10px;
-        }
-
-        .stat-card p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .warning {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 25px;
-            background: rgba(233, 69, 96, 0.2);
-            border-left: 5px solid #e94560;
-            border-radius: 5px;
-            text-align: left;
-            font-size: 1.1rem;
-        }
-
-        /* SOLUTIONS SECTION */
-        .solutions {
-            padding: 80px 20px;
-            background: #f8f9fa;
-            text-align: center;
-        }
-
-        .solutions h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-        .solutions .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 50px;
-            color: #7f8c8d;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .solution-card {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .solution-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #27ae60;
-        }
-
-        .solution-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* CTA SECTION */
-        .cta {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .btn-white {
-            background: white;
-            color: #27ae60;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .btn-white:hover {
-            background: #f8f9fa;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        /* FOOTER */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        footer p {
-            opacity: 0.8;
-            margin-bottom: 10px;
-        }
-
-        footer .sources {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .crisis h2,
-            .solutions h2,
-            .cta h2 {
-                font-size: 2rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    
+    <!-- LINK PARA O CSS EXTERNO -->
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- FONTE POPPINS DO GOOGLE FONTS ☆ ADICIONADO ☆ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head> 
 <body> 
-    <!-- HERO SECTION -->
     <header class="hero">
         <h1>Agro forte, futuro sustentável</h1>
         <p class="subtitle">Equilíbrio entre produção e meio ambiente</p>
@@ -276,45 +22,43 @@
     </header>
 
     <main>
-        <!-- CRISIS SECTION -->
         <section class="crisis" id="crisis">
             <h2>Quando a produção ameaça a existência</h2>
             <p class="lead">
                 O agronegócio brasileiro enfrenta um paradoxo: enquanto é responsável por 
                 <strong>29% das emissões de carbono do país</strong>, também é a primeira vítima 
-                das mudanças climáticas que ajuda a gerar [web:31].
+                das mudanças climáticas que ajuda a gerar.
             </p>
 
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="number">52 milhões</span>
-                    <p>de hectares de vegetação nativa perdidos na Amazônia entre 1985-2024 [web:30]</p>
+                    <p>de hectares de vegetação nativa perdidos na Amazônia entre 1985-2024</p>
                 </div>
                 
                 <div class="stat-card">
                     <span class="number">30%</span>
-                    <p>das áreas agrícolas de milho e soja no Centro-Oeste já saíram do ideal climático [web:35]</p>
+                    <p>das áreas agrícolas de milho e soja no Centro-Oeste já saíram do ideal climático</p>
                 </div>
                 
                 <div class="stat-card">
                     <span class="number">74%</span>
-                    <p>das terras na fronteira Amazônia-Cerrado podem ficar inviáveis até 2060 [web:38]</p>
+                    <p>das terras na fronteira Amazônia-Cerrado podem ficar inviáveis até 2060</p>
                 </div>
                 
                 <div class="stat-card">
                     <span class="number">-4,7%</span>
-                    <p>queda na safra de cereais de 2024 devido às mudanças climáticas [web:32]</p>
+                    <p>queda na safra de cereais de 2024 devido às mudanças climáticas</p>
                 </div>
             </div>
 
             <div class="warning">
                 <strong>⚠️ O ciclo é perigoso:</strong> expansão da pecuária e agricultura é o principal 
-                motor do desmatamento [web:30], mas até <strong>70% das propriedades</strong> podem estar 
-                em áreas impróprias para cultivo nos próximos 20 anos [web:35].
+                motor do desmatamento, mas até <strong>70% das propriedades</strong> podem estar 
+                em áreas impróprias para cultivo nos próximos 20 anos.
             </div>
         </section>
 
-        <!-- SOLUTIONS SECTION -->
         <section class="solutions">
             <h2>Soluções que Funcionam</h2>
             <p class="subtitle">Tecnologias e práticas que equilibram produção e preservação</p>
@@ -322,17 +66,17 @@
             <div class="solutions-grid">
                 <div class="solution-card">
                     <h3>🌱 Agricultura de Precisão</h3>
-                    <p>Uso de tecnologia para otimizar recursos, reduzindo agroquímicos em até 40% e aumentando produtividade em 20% [web:1]</p>
+                    <p>Uso de tecnologia para otimizar recursos, reduzindo agroquímicos em até 40% e aumentando produtividade em 20%</p>
                 </div>
                 
                 <div class="solution-card">
                     <h3>💧 Irrigação Inteligente</h3>
-                    <p>Economia de até 40% de água com sistemas automatizados que fornecem exatamente o que a planta precisa [web:3]</p>
+                    <p>Economia de até 40% de água com sistemas automatizados que fornecem exatamente o que a planta precisa</p>
                 </div>
                 
                 <div class="solution-card">
                     <h3>🌿 Bioinsumos</h3>
-                    <p>Substituição de químicos por soluções naturais que melhoram a saúde do solo e aumentam a resiliência das culturas [web:2]</p>
+                    <p>Substituição de químicos por soluções naturais que melhoram a saúde do solo e aumentam a resiliência das culturas</p>
                 </div>
                 
                 <div class="solution-card">
@@ -342,7 +86,110 @@
             </div>
         </section>
 
-        <!-- CTA SECTION -->
+        <section class="myths">
+            <h2>❌ Mitos e ✅ Verdades sobre Agro Sustentável</h2>
+            <p class="subtitle">Desmistificando ideias equivocadas sobre produção e preservação</p>
+            
+            <div class="myths-container">
+                <div class="myth-item">
+                    <span class="myth">❌ MITO:</span>
+                    <p class="myth-text">"Agro sustentável é mais caro"</p>
+                    <span class="truth">✅ VERDADE:</span>
+                    <p class="truth-text">Investimento inicial é maior, mas o retorno é positivo em 2-3 anos. Práticas como plantio direto reduzem custos com maquinário e insumos a longo prazo.</p>
+                </div>
+
+                <div class="myth-item">
+                    <span class="myth">❌ MITO:</span>
+                    <p class="myth-text">"Sustentabilidade reduz a produtividade"</p>
+                    <span class="truth">✅ VERDADE:</span>
+                    <p class="truth-text">Estudos mostram que práticas sustentáveis como ILPF aumentam a produtividade em 20-35% enquanto recuperam o solo e sequestram carbono.</p>
+                </div>
+
+                <div class="myth-item">
+                    <span class="myth">❌ MITO:</span>
+                    <p class="myth-text">"Só grandes produtores podem ser sustentáveis"</p>
+                    <span class="truth">✅ VERDADE:</span>
+                    <p class="truth-text">Pequenos produtores também se beneficiam! Agroflorestas e sistemas integrados são acessíveis e lucrativos para qualquer escala de produção.</p>
+                </div>
+
+                <div class="myth-item">
+                    <span class="myth">❌ MITO:</span>
+                    <p class="myth-text">"Agro só destrói o meio ambiente"</p>
+                    <span class="truth">✅ VERDADE:</span>
+                    <p class="truth-text">O Brasil reduziu 32,4% o desmatamento em 2024. O agro brasileiro é líder mundial em tecnologias sustentáveis e produção em área já desmatada.</p>
+                </div>
+
+                <div class="myth-item">
+                    <span class="myth">❌ MITO:</span>
+                    <p class="myth-text">"Tecnologia no campo é cara e inacessível"</p>
+                    <span class="truth">✅ VERDADE:</span>
+                    <p class="truth-text">Muitas soluções são gratuitas ou de baixo custo. Apps de monitoramento, sensores de umidade simples e bioinsumos locais são acessíveis a todos.</p>
+                </div>
+
+                <div class="myth-item">
+                    <span class="myth">❌ MITO:</span>
+                    <p class="myth-text">"Preservar significa deixar de produzir"</p>
+                    <span class="truth">✅ VERDADE:</span>
+                    <p class="truth-text">É possível produzir mais preservando melhor. Agricultura de precisão aumenta produção enquanto reduz emissões em 40% e uso de água em 40%.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources" id="recursos">
+            <h2>📚 Recursos e Bibliografia</h2>
+            <p class="subtitle">Conheça materiais gratuitos para aprofundar seu conhecimento sobre agro sustentável</p>
+            
+            <div class="resources-grid">
+                <div class="resource-category">
+                    <h3>📖 Artigos Científicos</h3>
+                    <ul>
+                        <li>
+                            <a href="https://g1.globo.com/meio-ambiente/noticia/2025/04/25/desmatamento-na-amazonia-degradacao-agosto-2024-marco-2025.ghtml" target="_blank">
+                                Desmatamento na Amazônia sobe 17,8% (G1)
+                            </a>
+                            <span class="description">Monitoramento Imazon - 2.296 km² derrubados entre ago/24 e mar/25</span>
+                        </li>
+                        <li>
+                            <a href="https://www.gov.br/ibama/pt-br/assuntos/noticias/2025/desmatamento-no-brasil-caiu-32-4-em-2024" target="_blank">
+                                Desmatamento no Brasil caiu 32,4% em 2024 (IBAMA)
+                            </a>
+                            <span class="description">Governo Federal - Redução em 5 dos 6 biomas brasileiros</span>
+                        </li>
+                        <li>
+                            <a href="https://www.brasildefato.com.br/2025/03/11/agro-em-queda-e-energia-em-alta-como-as-mudancas-climaticas-afetam-o-pib-do-brasil/" target="_blank">
+                                Agro em queda: mudanças climáticas afetam PIB (Brasil de Fato)
+                            </a>
+                            <span class="description">Seca compromete safra de soja e milho em 2024</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource-category">
+                    <h3>🎥 Vídeos (Embrapa)</h3>
+                    <ul>
+                        <li>
+                            <a href="https://www.youtube.com/@embrapa/videos" target="_blank">
+                                Canal Oficial da Embrapa no YouTube
+                            </a>
+                            <span class="description">Mais de 1.000 vídeos sobre tecnologia agrícola</span>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/results?search_query=agricultura+sustentavel+embrapa" target="_blank">
+                                Agricultura Sustentável - Embrapa
+                            </a>
+                            <span class="description">Vídeos sobre práticas sustentáveis e tecnologias verdes</span>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/results?search_query=ILPF+embrapa" target="_blank">
+                                ILPF - Integração Lavoura-Pecuária-Floresta
+                            </a>
+                            <span class="description">Explicação completa sobre ILPF da Embrapa</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <section class="cta">
             <h2>Junte-se à Revolução Verde do Agro</h2>
             <p>O agro do amanhã começa hoje. Produzir mais, preservar melhor.</p>
@@ -350,17 +197,19 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <p><strong>Agro Forte, Futuro Sustentável</strong></p>
         <p>Equilíbrio entre produção e meio ambiente</p>
         <p>Desenvolvido no GitHub Pages 🌱</p>
         
         <div class="sources">
-            <p><strong>Fuentes dos dados:</strong></p>
+            <p><strong>Fontes dos dados:</strong></p>
             <p>MapBiomas (desmatamento) | IBGE (produção agropecuária) | Conab (safra de grãos)</p>
             <p>IBAMA/Governo Federal | IPAM/Nature Climate Change | Imazon (monitoramento)</p>
         </div>
     </footer>
+
+    <!-- LINK PARA O JAVASCRIPT EXTERNO -->
+    <script src="script.js"></script>
 </body> 
 </html>

@@ -1,0 +1,533 @@
+/* ========================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ========================================
+   HERO SECTION (CAPA)
+   ======================================== */
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop') center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero .tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+/* ========================================
+   BOTÕES
+   ======================================== */
+
+.btn {
+    background: #2ecc71;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #27ae60;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+.btn-white {
+    background: white;
+    color: #27ae60;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-white:hover {
+    background: #f8f9fa;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ========================================
+   SEÇÃO CRISE (DADOS DO PROBLEMA)
+   ======================================== */
+
+.crisis {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    text-align: center;
+}
+
+.crisis h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #e94560;
+}
+
+.crisis .lead {
+    font-size: 1.3rem;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-card .number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e94560;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.warning {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px;
+    background: rgba(233, 69, 96, 0.2);
+    border-left: 5px solid #e94560;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   SEÇÃO SOLUÇÕES
+   ======================================== */
+
+.solutions {
+    padding: 80px 20px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.solutions h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.solutions .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #7f8c8d;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solution-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.solution-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.solution-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #27ae60;
+}
+
+.solution-card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* ========================================
+   SEÇÃO MITOS E VERDADES
+   ======================================== */
+
+.myths {
+    padding: 80px 20px;
+    background: white;
+}
+
+.myths h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.myths .subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #7f8c8d;
+}
+
+.myths-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.myth-item {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 5px solid #e74c3c;
+    transition: transform 0.3s;
+}
+
+.myth-item:hover {
+    transform: translateX(10px);
+}
+
+.myth-item .myth {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.myth-item .myth-text {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.myth-item .truth {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+.myth-item .truth-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ========================================
+   SEÇÃO RECURSOS
+   ======================================== */
+
+.resources {
+    padding: 80px 20px;
+    background: #ecf0f1;
+}
+
+.resources h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.resources .subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #7f8c8d;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.resource-category {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid #2ecc71;
+}
+
+.resource-category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resource-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-category li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.resource-category li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.resource-category a {
+    color: #27ae60;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: block;
+    padding: 5px 0;
+}
+
+.resource-category a:hover {
+    color: #1e8449;
+    padding-left: 5px;
+}
+
+.resource-category .description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 3px;
+    display: block;
+}
+
+/* ========================================
+   SEÇÃO CTA (CHAMADA PARA AÇÃO)
+   ======================================== */
+
+.cta {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* ========================================
+   FOOTER (RODAPÉ)
+   ======================================== */
+
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+footer .sources {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ========================================
+   ANIMAÇÕES DO JAVASCRIPT
+   ======================================== */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background: #27ae60;
+    transform: translateY(-5px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .crisis h2,
+    .solutions h2,
+    .myths h2,
+    .resources h2,
+    .cta h2 {
+        font-size: 2rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .btn,
+    .btn-white {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}
