@@ -1,13 +1,6 @@
-/* ========================================
-   SCRIPT.JS - INTERAÇÕES DA PÁGINA
-   ======================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ========================================
-    // 1. SCROLL SUAVE PARA ÂNCORAS
-    // ========================================
-    
+   
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -24,9 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ========================================
-    // 2. ANIMAÇÃO AO ROLAR (SCROLL REVEAL)
-    // ========================================
     
     const animatedElements = document.querySelectorAll(
         '.stat-card, .solution-card, .myth-item, .resource-category'
@@ -50,10 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkAnimation);
     checkAnimation();
     
-    // ========================================
-    // 3. BOTÃO VOLAR AO TOPO
-    // ========================================
-    
     const backToTopBtn = document.createElement('button');
     backToTopBtn.innerHTML = '↑';
     backToTopBtn.className = 'back-to-top';
@@ -75,9 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ========================================
-    // 4. HEADER MUDA COR AO ROLAR
-    // ========================================
     
     const hero = document.querySelector('.hero');
     const originalBackground = hero.style.background;
@@ -90,10 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ========================================
-    // 5. CONTA AS ESTATÍSTICAS
-    // ========================================
-    
+   
     const stats = document.querySelectorAll('.stat-card .number');
     let counted = false;
     
@@ -122,9 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🌱 Site Agro Forte carregado com sucesso!');
 });
 
-// ========================================
-// 6. ALERTA NA SAÍDA (OPCIONAL)
-// ========================================
+
 
 window.addEventListener('beforeunload', function(e) {
     // e.preventDefault();
