@@ -1,6 +1,33 @@
 
+
 document.addEventListener('DOMContentLoaded', function() {
+    
+    
+    
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    
+    // Verifica se o usuário já tem preferência salva
+    const currentMode = localStorage.getItem('dark-mode');
+    
+    if (currentMode === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+    
+    // Evento de clique no botão
+    darkModeToggle.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        
+        // Salva a preferência do usuário
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            localStorage.setItem('dark-mode', 'disabled');
+        }
+    });
+    
    
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -16,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
     
     
     const animatedElements = document.querySelectorAll(
@@ -40,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkAnimation);
     checkAnimation();
     
+    
+    
     const backToTopBtn = document.createElement('button');
     backToTopBtn.innerHTML = '↑';
     backToTopBtn.className = 'back-to-top';
@@ -62,18 +92,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
+    
     const hero = document.querySelector('.hero');
-    const originalBackground = hero.style.background;
     
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 100) {
-            hero.style.background = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(\'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop\') center/cover';
+            if (body.classList.contains('dark-mode')) {
+                hero.style.background = 'linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(\'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop\') center/cover';
+            } else {
+                hero.style.background = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(\'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop\') center/cover';
+            }
         } else {
-            hero.style.background = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop\') center/cover';
+            if (body.classList.contains('dark-mode')) {
+                hero.style.background = 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(\'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop\') center/cover';
+            } else {
+                hero.style.background = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(\'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1920&auto=format&fit=crop\') center/cover';
+            }
         }
     });
     
    
+    
     const stats = document.querySelectorAll('.stat-card .number');
     let counted = false;
     
@@ -100,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', countStats);
     
     console.log('🌱 Site Agro Forte carregado com sucesso!');
+    console.log('🌙 Modo escuro: ' + (body.classList.contains('dark-mode') ? 'ATIVO' : 'INATIVO'));
 });
 
 

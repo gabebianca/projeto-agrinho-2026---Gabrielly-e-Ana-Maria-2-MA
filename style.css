@@ -1,15 +1,100 @@
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Variáveis de cores - MODO CLARO (padrão) */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #ecf0f1;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-muted: #7f8c8d;
+    --border-color: #e0e0e0;
+}
+
+/* MODO ESCURO - sobrepõe as variáveis */
+body.dark-mode {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #252525;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #a0a0a0;
+    --border-color: #333333;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s, color 0.3s;
 }
+
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #2ecc71;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(46, 204, 113, 0.4);
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(46, 204, 113, 0.5);
+}
+
+.dark-mode-toggle .icon {
+    position: absolute;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.dark-mode-toggle .sun {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.dark-mode-toggle .moon {
+    opacity: 0;
+    transform: rotate(-90deg);
+}
+
+body.dark-mode .dark-mode-toggle .sun {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+body.dark-mode .dark-mode-toggle .moon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #ffd700;
+    box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
 
 
 .hero {
@@ -23,6 +108,7 @@ body {
     text-align: center;
     color: white;
     padding: 20px;
+    transition: background 0.3s;
 }
 
 .hero h1 {
@@ -43,6 +129,7 @@ body {
     margin-bottom: 40px;
     opacity: 0.8;
 }
+
 
 
 .btn {
@@ -76,7 +163,7 @@ body {
 }
 
 .btn-white:hover {
-    background: #f8f9fa;
+    background: var(--bg-secondary);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
@@ -153,20 +240,21 @@ body {
 
 .solutions {
     padding: 80px 20px;
-    background: #f8f9fa;
+    background: var(--bg-secondary);
     text-align: center;
+    transition: background-color 0.3s;
 }
 
 .solutions h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--text-primary);
 }
 
 .solutions .subtitle {
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: #7f8c8d;
+    color: var(--text-muted);
 }
 
 .solutions-grid {
@@ -178,7 +266,7 @@ body {
 }
 
 .solution-card {
-    background: white;
+    background: var(--bg-primary);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -197,29 +285,29 @@ body {
 }
 
 .solution-card p {
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.8;
 }
 
 
-
 .myths {
     padding: 80px 20px;
-    background: white;
+    background: var(--bg-primary);
+    transition: background-color 0.3s;
 }
 
 .myths h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--text-primary);
 }
 
 .myths .subtitle {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: #7f8c8d;
+    color: var(--text-muted);
 }
 
 .myths-container {
@@ -228,7 +316,7 @@ body {
 }
 
 .myth-item {
-    background: #f8f9fa;
+    background: var(--bg-secondary);
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 25px;
@@ -250,7 +338,7 @@ body {
 
 .myth-item .myth-text {
     font-size: 1.2rem;
-    color: #333;
+    color: var(--text-primary);
     margin-bottom: 15px;
     font-style: italic;
 }
@@ -265,28 +353,30 @@ body {
 
 .myth-item .truth-text {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
 
+
 .resources {
     padding: 80px 20px;
-    background: #ecf0f1;
+    background: var(--bg-tertiary);
+    transition: background-color 0.3s;
 }
 
 .resources h2 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--text-primary);
 }
 
 .resources .subtitle {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: #7f8c8d;
+    color: var(--text-muted);
 }
 
 .resources-grid {
@@ -298,7 +388,7 @@ body {
 }
 
 .resource-category {
-    background: white;
+    background: var(--bg-primary);
     padding: 30px;
     border-radius: 10px;
     border-left: 5px solid #2ecc71;
@@ -307,7 +397,7 @@ body {
 .resource-category h3 {
     font-size: 1.4rem;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -347,7 +437,7 @@ body {
 
 .resource-category .description {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-secondary);
     margin-top: 3px;
     display: block;
 }
@@ -371,7 +461,6 @@ body {
     margin-bottom: 30px;
     opacity: 0.9;
 }
-
 
 
 footer {
@@ -458,8 +547,6 @@ footer .sources {
 .stat-card:nth-child(3) { animation-delay: 0.3s; }
 .stat-card:nth-child(4) { animation-delay: 0.4s; }
 
-
-
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -484,6 +571,17 @@ footer .sources {
     .resources-grid {
         grid-template-columns: 1fr;
     }
+    
+    .dark-mode-toggle {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .dark-mode-toggle .icon {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -502,6 +600,17 @@ footer .sources {
         right: 20px;
         width: 45px;
         height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .dark-mode-toggle {
+        width: 45px;
+        height: 45px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .dark-mode-toggle .icon {
         font-size: 1.2rem;
     }
 }
